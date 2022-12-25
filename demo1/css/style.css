@@ -14,7 +14,7 @@
 .sidebar__logo:hover{
     cursor: pointer;
 }
-.sidebar__logo-link{
+.sidebar__logo__link{
     width: 100%;
     display: flex;
 }
@@ -25,13 +25,26 @@
 .sidebar__menu{
     margin-top: 10px;
 }
-.sidebar__menu-list{
+.menu__list{
     list-style: none;
+    display: -webkit-flex; /* Safari */
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
 }
-.sidebar__menu-item{
+.menu__item:nth-child(3){
+    -webkit-order: 2;
+    order: 2;
+}
+.menu__item:nth-child(2){
+    -webkit-order: 1;
+    order: 1;
+}
+.menu__item:nth-child(1){
+    -webkit-order: 3;
+    order: 3;
+}
+.menu__item{
     font-size: 1.4rem;
     font-weight: bolder;
     color: #d0d5dd;
@@ -39,13 +52,15 @@
     padding: 15px 10px;
     border-radius: 7px;
 }
-.sidebar__menu-item:hover{
+.menu__item:hover{
     cursor: pointer;
     background-color: #ca4904;
 }
-.sidebar__menu-icon{
+.menu__icon{
     margin-right: 20px;
 }
+
+
 
 
 .content{
@@ -72,7 +87,7 @@
     display: flex;
     height: 100%;
 }
-.content__header-left--feetback{
+.header-left__feetback{
     margin: auto;
     font-size: 1.5rem;
     font-weight: bolder;
@@ -81,24 +96,27 @@
     padding: 8px 5px;
     border-radius: 20px;
 }
-.content__header-left--feetback:hover{
+.header-left__feetback:hover{
     cursor: pointer;
     background-color: #ca4904;
 }
-.content__header-left--text{
+.header-left__text{
     padding-left: 10px;
 }
-.content__header-left--icon{
+.header-left__icon{
     margin-left: 7px;
     padding-right: 10px;
 }
+
+
+
 .content__header-right{
     display: flex;
     height: 100%;
     font-size: 1.7rem; 
     color: #4f5f6f;
 }
-.content__header-right--same{
+.header-right__same{
     position: relative;
     margin: auto;
     padding-left: 10px;
@@ -107,11 +125,12 @@
     cursor: pointer;
     flex-wrap:nowrap;
 }
-.content__header-right--same:hover .content__header-right-languages{
+
+.header-right__same:hover .header-right__languages{
     display: block;
     cursor: pointer;
 }
-.content__header-right-languages{
+.header-right__languages{
     width: 220px;
     position: absolute;
     top: 100%;
@@ -125,62 +144,69 @@
     border-radius: 10px;
     display: none;
 }
-.content__header-right-languages--list{
+.languages__list{
     display: flex;
     width: 100%;
     padding: auto;
     height: 50%;
     align-items: center;
 }
-.content__header-right-languages--list:first-child{
+.languages__list:first-child{
     border-radius: 9px 9px 0 0;
 }
-.content__header-right-languages--list:last-child{
+.languages__list:last-child{
     border-radius: 0 0 9px 9px;
 }
-.content__header-right-languages--list:hover{
+.languages__list:hover{
     background-color: #eaecf0;
 }
-.content__header-right-languages--img{
+.languages__img{
     width: 12%;
     left: 0;
     margin-left: 9%;
 }
-.content__header-right-languages--text{
+.languages__text{
     margin-left: 3%;
     font-size: 1.5rem;
 }
 
 
-.content__header-right--same--img{
+.header-right__same__img{
     height: 60%;
     margin: auto;
     margin-right: 8px;
     border-radius: 30px;
 }
-.content__header-right--same--text{
+.header-right__same__text{
     margin: auto;
     font-size: 1.5rem;
     margin-right: 5px;
 }
-.content__header-right--same--icon{
+.header-right__same__icon{
     margin: auto;
     font-size: 1.5rem;
 }
 
-.content__header-right--gach{
+.header-right__gach{
     margin: auto;
     padding: 0px 20px;
     font-size: 2rem;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
-.content__header-right--notify{
+
+
+
+.header-right__notify{
     margin: auto;
     padding: 0px 20px 0px 0px;
     font-size: 2rem;
     cursor: pointer;
     position: relative;
+    
 }
-.content__header-right--notify::after{
+.header-right__notify::after{
     position: absolute;
     width: 100%;
     height: 20px;
@@ -190,12 +216,12 @@
     
 }
 
-.content__header-right--notify:hover .content__header-right--notify--content{
+.header-right__notify:hover .notify__content{
     display: block;
 }
 
 
-.content__header-right--notify--content{
+.notify__content{
     position: absolute;
     width: 321px;
     max-height: 300px;
@@ -208,7 +234,7 @@
     border-radius: 5px;
     display: none;
 }
-.content__header-right--notify--content--status{
+.notify__status{
     height: 35%;
     width: 100%;
     background-color: #fff;
@@ -218,7 +244,7 @@
     border: 1px solid #eaecf0;
     border-radius: 5px 5px 0 0;
 }
-.content__header-right--notify--content--status--text{
+.notify__status__text{
     font-size: 1.4rem;
     font-weight: bolder;
     color: #ffffff;
@@ -228,7 +254,7 @@
     border-radius: 5px;
     
 }
-.content__header-right--notify--content--main{
+.notify__main{
     height: 45%;
     width: 100%;
     background-color: #fff;
@@ -238,26 +264,29 @@
     border-right: 1px solid #eaecf0;
     /* border: 1px solid #eaecf0; */
 }
-.content__header-right--notify--content--main:hover{
+.notify__main:hover{
     background-color: #eaecf0;
 }
-.content__header-right--notify--content--main .content__main__course-item--authur{
+.notify__main .course__authur{
     display: flex;
     justify-content: start;
     align-items: center;
 }
-.content__header-right--notify--content--main--text{
+.notify__main__text{
     font-size: 1.5rem;
     font-weight: bold;
     margin-left: 10px;
     padding: 0;
 }
-.content__header-right--notify--content--main--time{
+
+
+
+.notify__main__time{
     margin-top: 5px;
     display: flex;
     align-items: center;
 }
-.content__header-right--notify--content--showAll{
+.notify__show{
     height: 20%;
     width: 100%;
     background-color: #ffffff;
@@ -266,7 +295,7 @@
     border: 1px solid #eaecf0;
     border-radius: 0 0 5px 5px;
 }
-.content__header-right--notify--content--showAll--text{
+.notify__show__text{
     margin: auto;
     text-decoration: none;
     font-size: 1.5rem;
@@ -274,7 +303,7 @@
     font-weight: bolder;
 }
 
-.content__header-right-user{
+.header-right__user{
     width: 220px;
     position: absolute;
     top: 100%;
@@ -289,36 +318,36 @@
     border-radius: 9px;
     display: none;
 }
-.content__header-right--same:hover .content__header-right-user{
+.header-right__same:hover .header-right__user{
     display: block;
     cursor: pointer;
 }
-.content__header-right-user--list{
+.user__list{
     display: flex;
     flex-direction: column;
     height: 100%;
 }
-.content__header-right-user--setting{
+.user__setting{
    display: flex;
    width: 100%;
    height: 33px;
    align-items: center;
    font-size: 1.5rem;
 }
-.content__header-right-user--setting:first-child{
+.user__setting:first-child{
     border-radius: 9px 9px 0 0;
 }
-.content__header-right-user--setting:last-child{
+.user__setting:last-child{
     border-radius: 0 0 9px 9px;
 }
-.content__header-right-user--setting:hover{
+.user__setting:hover{
     background-color: #eaecf0;
 }
-.content__header-right-user--setting--text{
+.user__setting__text{
     margin-left: 10px;
     width: 100%;
 }
-.content__header-right-user--setting--icon{
+.user__setting__icon{
     margin-left: 10px;
 }
 
@@ -327,7 +356,7 @@
     display: block;
     padding: 20px;
 }
-.content__main__Title{
+.main__title{
     margin-top: 2%;
     display: flex;
     font-size: 21px;
@@ -337,24 +366,31 @@
     background-color: #ffffff;
     border:#eaecf0 solid 1px;
     border-radius: 7px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
-.content__main__course{
+.main__course{
     position: relative;
 }
-.content__main__course-list{
+
+
+.course__list{
     height: 380px;
     margin-top: 50px;
     background-color: #ffffff;
     padding: 16px;
     border: 1px #eaecf0 solid;
     border-radius: 10px;
+    
 }
-.content__main__course-item--img{
+.course__img{
     height: 50%;
     width: 100%;
     padding: 10px 0px 10px 0;
+    
 }
-.content__main__course-item{
+.course__item{
     height: 40%;
     width: 100%;
     background-color: #ffffff;
@@ -362,16 +398,16 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.content__main__course-item--status{
+.course__status{
     display: flex;
     justify-content: space-between;
 }
-.content__main__course-item--status--left{
+.course__status--left{
     font-size: 14px;
     color: #4f5f6f;
     padding: 5px 10px;
 }
-.content__main__course-item--status--right{
+.course__status--right{
     font-size: 14px;
     font-weight: bolder;
     padding: 5px 10px;
@@ -379,7 +415,7 @@
     color: #ef6820;
     background-color: #fef0c7;
 }
-.content__main__course-item--link{
+.course__link{
     font-size: 18px;
     width: 100%;
     font-weight: bolder;
@@ -393,24 +429,24 @@
     white-space: nowrap;
     max-width: 290px;
 }
-.content__main__course-item--authur{
+.course__authur{
     display: flex;
     padding: 5px 10px;
     font-size: 13px;
     width: 100%;
     justify-content: flex-start;
 }
-.content__main__course-item--authur--img{
+.course__authur__img{
     width: 10%;
     border-radius: 25px;
 }
-.content__main__course-item--authur--name{
+.course__authur__name{
     margin-left: 10px;
     margin-top: 8px;
     text-align: center;
 }
 
-.content__main__course-item--complete {
+.course__complete {
     background-color: rgb(192, 192, 192);
     width: 100%;
     border-radius: 3px;
@@ -419,7 +455,7 @@
     margin-bottom: 10px;
 }
 
-.content__main__course-item--complete--total {
+.course__complete--total {
     background-color: #007bff;
     color: white;
     text-align: right;
@@ -427,11 +463,11 @@
     border-radius: 3px;
     
 }
-.content__main__course-item--complete--completed {
+.course__complete--completed {
     width: 10%;
 }
 
-.content__main__course-item--infor{   
+.course__infor{   
     width: 100%;
     background-color: #fff;
     display: flex;
@@ -439,11 +475,11 @@
     font-size: 1.5rem;
     color: #4f5f6f;
 }
-.content__main__course-item--infor--icon{
+.course__infor__icon{
     margin-left: 20px;
     margin-top: 10px;
 }
-.content__main__course-item--infor--text{
+.course__infor__text{
     margin-left: 5px;
     margin-top: 10px;
 }
@@ -457,7 +493,7 @@
     color: #4f5f6f;
 }
 
-.content__header-left-navbar{
+.header-left__navbar{
     margin: auto;
     font-size: 20px;
     margin-right: 15px;
