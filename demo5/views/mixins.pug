@@ -1,0 +1,74 @@
+-
+  const auths = [
+    {
+      'name': 'John Doe',
+      'jod': 'CEO & Founder',
+      'desc': 'Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.',
+      'src': '../images/john.jpg'
+    },
+    {
+      'name': 'Jane Doe',
+      'jod': 'Architect',
+      'desc': 'Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.',
+      'src': '../images/jane.jpg'
+    },
+    {
+      'name': 'Mike Ross',
+      'jod': 'Architect',
+      'desc': 'Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.',
+      'src': '../images/mike.jpg'
+    },
+    {
+      'name': 'Dan Star',
+      'jod': 'Architect',
+      'desc': 'Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.',
+      'src': '../images/dan.jpg'
+    }
+  ]
+
+- const items = ['Project', 'About', 'Contact']
+
+-
+  const projects = [
+    {
+      'name': 'Summer home',
+      'src': '../images/summer_home.jpg'
+    },
+    {
+      'name': 'Brick House',
+      'src': '../images/brick_home.jpg'
+    },
+    {
+      'name': 'Renovated',
+      'src': '../images/Renovated_home.jpg'
+    },
+    {
+      'name': 'Barn House',
+      'src': '../images/Barn_house.jpg'
+    }
+  ]
+mixin content(title,desc)
+    if !desc
+        p.title= title 
+        hr.new1
+    else 
+        p.title= title 
+        hr.new1
+        p.desc= desc
+
+mixin mixin_project()
+    each project in projects
+        .project__list
+            img.project__img(src=project.src, alt=project.name)
+            p.project__text= project.name
+
+
+
+mixin mixin_about()
+    each auth in auths
+        .about__box
+            img.about__img(src=auth.src alt=auth.name)
+            p.about__name= auth.name
+            p.about__jod= auth.jod
+            p.about__desc= auth.desc
+            a.btn.btn__about(href="#") contact

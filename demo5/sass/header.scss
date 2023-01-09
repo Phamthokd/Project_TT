@@ -1,0 +1,50 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 16px;
+    max-width: 1317px;
+    margin: 0 auto;
+    letter-spacing: 4px;
+    @include flex;
+    background-color: $background;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    z-index: 100;
+}
+
+.menu{
+    @include flex;
+    &__item{
+        @include flex;
+        padding: 8px 16px;
+    }
+    &__item:hover{
+        background-color: #ccc;
+    }
+    &__link{
+        text-decoration: none;
+        color: $text-color;
+        font-family: 'Verdana', sans-serif;
+        outline: 0;
+    }
+}
+.banner{
+    &__img{
+        background: lightblue url(../images/banner1.jpg) no-repeat center;
+        background-size: cover;
+        @include flex;
+        justify-content: center;
+        height: 700px;
+        width: 100%;
+        color: $background;
+        font-size: 36px;
+    }
+    &__text{
+        background-color: rgba(32, 28, 28, 0.589);
+        padding: 10px;
+        margin-right: 5px;
+        font-weight: bold;
+        @include vender_prefix;
+    }
+}

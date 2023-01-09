@@ -1,0 +1,21 @@
+.content 
+    +content("Project")
+    .project__main
+        +mixin_project()
+        +mixin_project()
+    .pagination
+        a(href='#') &laquo;
+        a.active(href='#') 1
+        a(href='#') 2
+        a(href='#') 3
+        a(href='#') &raquo;
+    +content("About","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+    .about__main
+        +mixin_about
+    +content("Contact","Lets get in touch and talk about your next project.")
+    .contact__main
+        input.contact__input(type='text' placeholder='Name' required='' name='Name')
+        input.contact__input(type='mail' placeholder='Email' required='' name='Email')
+        input.contact__input(type='Subject' placeholder='Subject' required='' name='Subject')
+        input.contact__input(type='Comment' placeholder='Comment' required='' name='Comment')
+        a.btn.btn__contact SEND MESSAGE
