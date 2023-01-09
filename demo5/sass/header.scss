@@ -11,6 +11,9 @@
     background-color: $background;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     z-index: 100;
+    @include maxWidth(739px){
+        letter-spacing: 0;
+    }
 }
 
 .menu{
