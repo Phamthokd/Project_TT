@@ -8,4 +8,5 @@ footer{
 }
 .footer__icon{
     margin-left: 10px;
+    @include zoom_img();
 }

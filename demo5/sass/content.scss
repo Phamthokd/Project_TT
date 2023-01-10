@@ -25,6 +25,7 @@
 .project__img{
     width: 100%;
     position: relative;
+    @include zoom_img();
 }
 .project__list{
     position: relative;
@@ -55,6 +56,7 @@
 .about__img{
     width: 100%;
     position: relative;
+    @include zoom_img();
 }
 .about__name{
     font-size: 24px;

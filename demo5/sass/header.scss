@@ -22,14 +22,31 @@
         @include flex;
         padding: 8px 16px;
     }
-    &__item:hover{
-        background-color: #ccc;
-    }
+    // &__item:hover{
+    //     background-color: #ccc;
+       
+    // }
     &__link{
         text-decoration: none;
         color: $text-color;
+        
         font-family: 'Verdana', sans-serif;
         outline: 0;
+        position: relative;
+        transition: all 0.2s linear;
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background-color: #ccc;
+            width: 0;
+            transition: all 0.2s linear;
+        }
+    }
+    &__link:hover::before{
+        width: 100%;
     }
 }
 .banner{
