@@ -95,6 +95,11 @@ body {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   z-index: 100;
 }
+@media screen and (max-width: 739px) {
+  .navbar {
+    letter-spacing: 0;
+  }
+}
 
 .menu {
   display: flex;
@@ -107,14 +112,27 @@ body {
   align-items: center;
   padding: 8px 16px;
 }
-.menu__item:hover {
-  background-color: #ccc;
-}
 .menu__link {
   text-decoration: none;
   color: #2f2f2f;
+  font-weight: 700;
   font-family: "Verdana", sans-serif;
   outline: 0;
+  position: relative;
+  transition: all 0.2s linear;
+}
+.menu__link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #ccc;
+  width: 0;
+  transition: all 0.2s linear;
+}
+.menu__link:hover::before {
+  width: 100%;
 }
 
 .banner__img {
@@ -176,6 +194,10 @@ body {
 .project__img {
   width: 100%;
   position: relative;
+  transition: transform 0.2s; /* Animation */
+}
+.project__img:hover {
+  transform: scale(1.05);
 }
 
 .project__list {
@@ -218,6 +240,10 @@ body {
 .about__img {
   width: 100%;
   position: relative;
+  transition: transform 0.2s; /* Animation */
+}
+.about__img:hover {
+  transform: scale(1.05);
 }
 
 .about__name {
@@ -316,6 +342,10 @@ footer {
 
 .footer__icon {
   margin-left: 10px;
+  transition: transform 0.2s; /* Animation */
+}
+.footer__icon:hover {
+  transform: scale(1.05);
 }
 
 /*# sourceMappingURL=app.css.map */
